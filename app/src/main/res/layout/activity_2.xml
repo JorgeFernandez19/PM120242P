@@ -5,6 +5,99 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#49AC4D"
     tools:context=".Activity2">
+
+    <EditText
+        android:id="@+id/correo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="101dp"
+        android:ems="10"
+        android:hint="@string/Ingresecorreo"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/btningresar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edad" />
+
+    <EditText
+        android:id="@+id/edad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="@string/Ingreseedad"
+        android:inputType="number|numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/correo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidos" />
+
+    <Button
+        android:id="@+id/btningresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="196dp"
+        android:layout_marginBottom="182dp"
+        android:text="Ingresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/correo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="274dp"
+        android:layout_marginBottom="73dp"
+        android:text="Formulario"
+        app:layout_constraintBottom_toTopOf="@+id/nombres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/nombres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="73dp"
+        android:layout_marginEnd="131dp"
+        android:ems="10"
+        android:hint="@string/Ingresenombre"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/apellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="@string/ingreseapellido"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/edad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombres" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

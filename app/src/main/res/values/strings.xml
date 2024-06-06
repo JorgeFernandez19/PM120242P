@@ -5,4 +5,6 @@
     <string name="Ingresenombre">Ingrese  nombre</string>
     <string name="Ingreseedad">Ingrese edad</string>
     <string name="Ingresecorreo">Ingrese correo\n</string>
+    <string name="TomarFoto">Tomar Foto\n</string>
+
 </resources>

@@ -3,7 +3,11 @@ package com.example.pm120242p;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +27,8 @@ SQLiteConexion conexion;
 ListView listperson;
 
 ArrayList <Personas> lista;
+
+ArrayList <String>  Arreglo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +44,28 @@ ArrayList <Personas> lista;
         listperson = (ListView) findViewById(R.id.listperson);
         ObtenerInfo();
 
+        ArrayAdapter adp = new ArrayAdapter(this, android.R.layout.simple_list_item_1, Arreglo);
+        listperson.setAdapter(adp);
+
+
+        listperson.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String ElementoSeleccionado = (String) parent.getItemAtPosition(position);
+
+                Toast.makeText(getApplicationContext(), ElementoSeleccionado, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
-    private void ObtenerInfo()
-    {
+    private void ObtenerInfo() {
 
         SQLiteDatabase db = conexion.getReadableDatabase();
         Personas person = null;
         lista = new ArrayList<Personas>();
+
+
+
 
         //Cursor para recorrer los datos de la tabla
 
@@ -64,5 +84,20 @@ ArrayList <Personas> lista;
             lista.add(person);
 
         }
+
+        cursor.close();
+        FaillDaate();
+    }
+
+    private void FaillDaate() {
+
+    Arreglo = new ArrayList<String>();
+    for (int i=0; i < lista.size(); i++)
+    {
+        Arreglo.add(lista.get(i).getId() + " "+
+                lista.get(i). getNombres() + " " +
+                lista.get(i).getApellidos());
+    }
+
     }
 }
